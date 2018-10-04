@@ -1,5 +1,6 @@
 // Place any CSS rules you want to apply on both iOS and Android here.
 // This is where the vast majority of your CSS code goes.
+@import '~nativescript-theme-core/css/core.dark.css';
 // Font icon class
 .fa {
    font-family: "FontAwesome";
@@ -23,7 +24,24 @@
 
     color:$ab-color;
 }
-
+.titre{
+    font-size:18;
+    font-weight: bold;
+}
+.cartel{
+    background-color:rgba(255,255,255,0.1);
+    padding:10;
+    margin-bottom:20;
+}
+.surimpression{
+    padding-bottom:40;
+    margin-bottom:-30;
+    border-top-left-radius:10;
+    border-top-right-radius:10;
+}
+.centre{
+    text-align: center;
+}
 //Action bar
 ActionBar .action-bar-title {
     horizontal-align: center;

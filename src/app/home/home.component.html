@@ -1,15 +1,42 @@
 <ActionBar class="action-bar">
-    <Label class="action-bar-title" text="AfroBeat"></Label>
+    <Label class="action-bar-title" text="AfroBeat" marginLeft="20" marginRight="20"></Label>
 </ActionBar>
 
 <GridLayout class="page page-content">
     <StackLayout>
         <ScrollView orientation="vertical" marginTop="20">
             <StackLayout>
-                <StackLayout *ngFor="let i of items" marginTop="20" marginBottom="20">
-                    <Image src="res://icon"></Image>
-                    <Label [text]="i.name" marginLeft="20"></Label>
-                    <Label [text]="i.description" marginLeft="20"></Label>
+                <StackLayout>
+                    <Image src="res://afrique"></Image>
+                </StackLayout>
+                <StackLayout class="cartel surimpression">
+                    <Label text="Best beats" class="titre"></Label>
+                </StackLayout>
+                <StackLayout orientation="horizontal" class="cartel">
+                    <StackLayout *ngFor="let i of items | slice:0:3" height="100" marginRight="10">
+                        <Image src="res://cover3" width="100" height="100"></Image>
+                        <Label [text]="i.name" marginTop="-80"></Label>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout class="cartel surimpression">
+                    <Label text="Best beatmakers" class="titre"></Label>
+                </StackLayout>
+                <StackLayout orientation="horizontal" class="cartel">
+
+                    <StackLayout dock="left" *ngFor="let i of items | slice:3:6" height="100" marginRight="10">
+                        <Image src="res://cover3" width="100" height="100"></Image>
+                        <Label [text]="i.name" marginTop="-80"></Label>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout class="cartel surimpression">
+                    <Label text="Pays du jour" class="titre"></Label>
+                </StackLayout>
+                <StackLayout orientation="horizontal" class="cartel">
+
+                    <StackLayout dock="left" *ngFor="let i of items | slice:6:9" height="100" marginRight="10">
+                        <Image src="res://cover3" width="100" height="100"></Image>
+                        <Label [text]="i.name" marginTop="-80"></Label>
+                    </StackLayout>
                 </StackLayout>
             </StackLayout>
         </ScrollView>
