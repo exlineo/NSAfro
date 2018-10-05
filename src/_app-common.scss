@@ -23,6 +23,7 @@
     }
 
     color:$ab-color;
+    background-image:linear-gradient(to bottom, black, #662d91);
 }
 .titre{
     font-size:18;
@@ -41,6 +42,10 @@
 }
 .centre{
     text-align: center;
+}
+.vignette{
+    margin:5;
+    margin-right:15;
 }
 //Action bar
 ActionBar .action-bar-title {

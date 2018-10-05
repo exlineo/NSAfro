@@ -1,7 +1,11 @@
 import { Component, OnInit } from "@angular/core";
 import { isAndroid } from "platform";
+import { action } from "tns-core-modules/ui/dialogs";
 import { SelectedIndexChangedEventData, TabView, TabViewItem } from "tns-core-modules/ui/tab-view";
+import * as Permissions from "nativescript-permissions";
+import { ConnectiviteService } from "~/app/core/connectivite.service";
 
+declare var android: any; // Déclaration de Androîd tirée du SDK
 @Component({
     selector: "ns-app",
     moduleId: module.id,
@@ -10,7 +14,7 @@ import { SelectedIndexChangedEventData, TabView, TabViewItem } from "tns-core-mo
 })
 export class AppComponent implements OnInit {
 
-    constructor() {
+    constructor(private connectivite:ConnectiviteService) {
         // Use the component constructor to inject providers.
     }
 
@@ -22,5 +26,29 @@ export class AppComponent implements OnInit {
         const iconPrefix = isAndroid ? "res://" : "res://tabIcons/";
 
         return iconPrefix + icon;
+    }
+    // Afficher le player
+    displayActionDialog() {
+        // >> action-dialog-code
+        let options = {
+            title: "Race selection",
+            message: "Choose your race",
+            cancelButtonText: "Cancel",
+            actions: ["Human", "Elf", "Dwarf", "Orc", "Unicorn"]
+        };
+
+        action(options).then((result) => {
+            console.log(result);
+        });
+        // << action-dialog-code
+    }
+    // Demander la permission
+    demandePermissions() {
+        Permissions.requestPermission(android.Manifest.permission.ACCESS_NETWORK_STATE, "Needed for connectivity status").then(() => {
+            this.connectivite.autorisation = true;
+            console.log("Permission granted!");
+        }).catch(() => {
+            console.log("Permission is not granted (sadface)");
+        });
     }
 }

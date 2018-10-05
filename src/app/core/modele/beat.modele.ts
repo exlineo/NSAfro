@@ -4,4 +4,5 @@ export interface Beat {
     auteur:string;
     duree: number;
     img?:string;
+    audio:string;
 }

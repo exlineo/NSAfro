@@ -4,27 +4,31 @@
         "titre": "Chop Suey",
         "auteur":"SOAD",
         "duree": 3,
-        "img":"http://www.fabriquenumerique.fr/tmp/images/soad.png"
+        "img":"http://www.fabriquenumerique.fr/tmp/images/soad.png",
+        "audio":""
     },
     {
         "id": 1,
         "titre": "Revenga",
         "auteur":"SOAD",
         "duree": 4,
-        "img":"http://www.fabriquenumerique.fr/tmp/images/soad.png"
+        "img":"http://www.fabriquenumerique.fr/tmp/images/soad.png",
+        "audio":""
     },
     {
         "id": 2,
         "titre": "Toxicity",
         "auteur":"SOAD",
         "duree": 5,
-        "img":"http://www.fabriquenumerique.fr/tmp/images/soad.png"
+        "img":"http://www.fabriquenumerique.fr/tmp/images/soad.png",
+        "audio":""
     },
     {
         "id": 3,
         "titre": "Lonely day",
         "auteur":"SOAD",
         "duree": 4,
-        "img":"http://www.fabriquenumerique.fr/tmp/images/soad.png"
+        "img":"http://www.fabriquenumerique.fr/tmp/images/soad.png",
+        "audio":""
     }
 ]

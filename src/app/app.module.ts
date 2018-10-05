@@ -4,6 +4,7 @@ import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
 
 import { AppRoutingModule, COMPONENTS } from "./app-routing.module";
 import { AppComponent } from "./app.component";
+import { PlayerComponent } from './player/player.component';
 import { ConnexionModule } from "./connexion/connexion.module";
 import { ProfilModule } from "./profil/profil.module";
 import { CoreModule } from "./core/core.module";
@@ -22,6 +23,7 @@ import { CoreModule } from "./core/core.module";
     ],
     declarations: [
         AppComponent,
+        PlayerComponent,
         ...COMPONENTS
     ],
     schemas: [

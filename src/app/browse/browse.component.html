@@ -1,5 +1,5 @@
 <ActionBar class="action-bar">
-    <Label class="action-bar-title" text="Browse"></Label>
+    <Label class="action-bar-title" text="Parcourir"></Label>
 </ActionBar>
 
 <StackLayout class="page page-content">
@@ -7,7 +7,7 @@
         <StackLayout>
             <GridLayout columns="175,*" *ngFor="let b of beatsService.beats; let i = index" class="cartel">
                 <StackLayout col="0">
-                    <Image src="res://soad"></Image>
+                    <Image src="res://soad" class="vignette"></Image>
                 </StackLayout>
                 <StackLayout col="1">
                     <Label text="Titre"></Label>
@@ -15,8 +15,8 @@
                     <Label text="Auteur"></Label>
                     <Label [text]="b.auteur" class="titre"></Label>
                     <Label text="Durée"></Label>
-                    <Label [text]="b.duree" class="titre"></Label>
-            </StackLayout>             
+                    <Label [text]="b.duree +' mn'" class="titre"></Label>
+            </StackLayout>
             </GridLayout>>
         </StackLayout>
     </ScrollView>

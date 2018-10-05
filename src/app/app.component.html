@@ -1,23 +1,26 @@
+
 <TabView androidTabsPosition="bottom" class="action-bar-title">
-
-    <page-router-outlet
-        *tabItem="{title: 'Accueil', iconSource: getIconSource('home')}"
-        name="homeTab">
+    <!-- <Button text="Display Action Dialog" (tap)="displayActionDialog()"  androidTabsPosition="bottom" class="btn btn-primary btn-active" ></Button> -->
+    
+    <page-router-outlet *tabItem="{title: 'Accueil', iconSource: getIconSource('home')}" name="homeTab">
     </page-router-outlet>
 
-    <page-router-outlet
-        *tabItem="{title: 'Parcourir', iconSource: getIconSource('browse')}"
-        name="browseTab">
+    <page-router-outlet *tabItem="{title: 'Parcourir', iconSource: getIconSource('browse')}" name="browseTab">
     </page-router-outlet>
 
-    <page-router-outlet
-        *tabItem="{title: 'Profil', iconSource: getIconSource('user')}"
-        name="profilTab">
+    <page-router-outlet *tabItem="{title: 'Profil', iconSource: getIconSource('user')}" name="profilTab">
     </page-router-outlet>
 
-    <page-router-outlet
-        *tabItem="{title: 'Recherche', iconSource: getIconSource('search')}"
-        name="searchTab">
+    <page-router-outlet *tabItem="{title: 'Recherche', iconSource: getIconSource('search')}" name="searchTab">
     </page-router-outlet>
-
+    <AbsoluteLayout androidTabsPosition="bottom" height="100">
+            <StackLayout orientation="horizontal" height="100" class="cartel">
+                <StackLayout>
+                    <Label text="play"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label text="pause"></Label>
+                </StackLayout>
+            </StackLayout>
+        </AbsoluteLayout>
 </TabView>
