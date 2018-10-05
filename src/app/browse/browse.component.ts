@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { BeatsService } from "~/app/core/beats.service";
 
 @Component({
     selector: "Browse",
@@ -6,11 +7,9 @@ import { Component, OnInit } from "@angular/core";
     templateUrl: "./browse.component.html"
 })
 export class BrowseComponent implements OnInit {
-    constructor() {
-        // Use the component constructor to inject providers.
-    }
+    constructor(public beatsService:BeatsService) {}
 
     ngOnInit(): void {
-        // Use the "ngOnInit" handler to initialize data for the view.
+        
     }
 }

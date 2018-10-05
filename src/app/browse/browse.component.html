@@ -2,7 +2,22 @@
     <Label class="action-bar-title" text="Browse"></Label>
 </ActionBar>
 
-<GridLayout class="page page-content">
-    <Label class="page-icon fa" text="&#xf1ea;"></Label>
-    <Label class="page-placeholder" text="<!-- Page content goes here -->"></Label>
-</GridLayout>
+<StackLayout class="page page-content">
+    <ScrollView>
+        <StackLayout>
+            <GridLayout columns="175,*" *ngFor="let b of beatsService.beats; let i = index" class="cartel">
+                <StackLayout col="0">
+                    <Image src="res://soad"></Image>
+                </StackLayout>
+                <StackLayout col="1">
+                    <Label text="Titre"></Label>
+                    <Label [text]="b.titre" class="titre"></Label>
+                    <Label text="Auteur"></Label>
+                    <Label [text]="b.auteur" class="titre"></Label>
+                    <Label text="Durée"></Label>
+                    <Label [text]="b.duree" class="titre"></Label>
+            </StackLayout>             
+            </GridLayout>>
+        </StackLayout>
+    </ScrollView>
+</StackLayout>
