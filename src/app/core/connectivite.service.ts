@@ -9,7 +9,7 @@ export class ConnectiviteService {
 
   connexion: boolean = false; // Fixer l'état de la connexion
   requete: Array<string>; // Enregistrer les url des requêtes qui ont été passées si elles n'ont pas pu être délivrées
-  autorisation: boolean = false;
+  autorisation: boolean = true;
 
   constructor() {
     this.testConnectivite();

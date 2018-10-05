@@ -24,7 +24,8 @@ export class BeatsService {
                 });
         } else {
             let tmp:any = this.data.litFichier('beats', 'beats');
-            console.log(JSON.parse(tmp));
+            // console.log(JSON.parse(tmp));
+            console.log(tmp);
         }
     }
 }
