@@ -1,5 +1,5 @@
 <ActionBar class="action-bar">
-    <Label class="action-bar-title" text="AfroBeat" marginLeft="20" marginRight="20"></Label>
+    <Label class="action-bar-title" text="AfroBeat"></Label>
 </ActionBar>
 
 <GridLayout class="page page-content">
@@ -19,6 +19,11 @@
                         <Label [text]="i.name" marginTop="-80"></Label>
                     </StackLayout>
                 </StackLayout>
+                <TabView id="tabViewContainer" height="200">
+                    <StackLayout *ngFor="let b of beatsService.beats | slice:0:4" >
+                        <StackLayout *tabItem="{title: '', iconSource: 'res://soad'}"></StackLayout>
+                    </StackLayout>
+                </TabView>
                 <StackLayout class="cartel surimpression">
                     <Label text="Best beatmakers" class="titre"></Label>
                 </StackLayout>
@@ -39,7 +44,36 @@
                         <Label [text]="i.name" marginTop="-80"></Label>
                     </StackLayout>
                 </StackLayout>
-            </StackLayout>
+            
+            <TabView id="tabViewContainer" height="200">
+                    <StackLayout *tabItem="{title: 'Top beats'}">
+                            <ListView [items]="beatsService.beats" (itemTap)="onItemTap($event)" class="list-group">
+                                <ng-template let-beat="item" let-i="index" let-odd="odd" let-even="even">
+                                    <!-- The item template can only have a single root view container (e.g. GridLayout, StackLayout, etc.)-->
+                                    <StackLayout orientation="horizontal" class="list-group-item">
+                                        <Label [text]="beat.titre" textWrap="true"></Label>
+                                        <Label [text]="beat.duree"></Label>
+                                    </StackLayout>
+                                </ng-template>
+                            </ListView>
+                    </StackLayout>
+                    <StackLayout *tabItem="{title: 'latest beats'}">
+                        <StackLayout>
+                            <!-- The item template can only have a single root view container (e.g. GridLayout, StackLayout, etc.)-->
+                            <StackLayout orientation="horizontal" *ngFor="let b of beatsService.beats; let i = index" >
+                                <Label [text]="i+' - '" textWrap="true"></Label>
+                                <Label [text]="b.titre" textWrap="true"></Label>
+                                <Label [text]="b.duree"></Label>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout *tabItem="{title: 'latest beatmakers'}">
+                        <StackLayout>
+                            <Label text="Second Tab" textWrap="true" class="m-15 h2 text-left" color="blue"></Label>
+                        </StackLayout>
+                    </StackLayout>
+            </TabView>
+        </StackLayout>
         </ScrollView>
     </StackLayout>
 </GridLayout>

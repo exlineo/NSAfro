@@ -4,17 +4,18 @@
 @import '~nativescript-theme-core/scss/dark';
 
 // Custom colors
-$background-dark: #F8F8F8 !default;
-$background-light: #FFFFFF !default;
-
+$background-dark: #000;
+$background-light: #FFFFFF;
+$pink-dark:#1a001a !default;
+$pink-light:#993399;
 $blue-dark: #022734 !default;
 $blue-light: #02556E !default;
 $blue-50: rgba($blue-dark, 0.5) !default;
 $blue-20: rgba($blue-dark, 0.2) !default;
 $blue-10: rgba($blue-dark, 0.1) !default;
 
-$accent-dark: #001a00 !default;
-$accent-light: #008000 !default;
+$accent-dark: #1a001a !default;
+$accent-light: #993399 !default;
 
 $success-dark: #06CE6A !default;
 $success-light: #00E676 !default;

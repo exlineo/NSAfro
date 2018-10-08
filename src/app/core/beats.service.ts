@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Beat } from './modele/beat.modele';
 import { DataService } from "./data.service";
 import { ConnectiviteService } from "./connectivite.service";
+
 @Injectable()
 export class BeatsService {
 
@@ -11,9 +12,9 @@ export class BeatsService {
     beat: Beat; // Beat sélectionné
 
     constructor(private http: HttpClient, private data: DataService, private connectivite: ConnectiviteService) {
-        this.getBeats('http://www.fabriquenumerique.fr/tmp/nsafro/beats.json');
+        this.getBeats('http://www.fabriquenumerique.fr/tmp/nsafro/beats.json'); // Appel d'un fichier JSON externe
     }
-
+    // Test de connectivité et appel des données du serveur
     getBeats(url: string) {
         if (this.connectivite.connexion) {
             this.http.get<Array<Beat>>(url).subscribe(
@@ -21,7 +22,7 @@ export class BeatsService {
                     this.beats = data;
                     this.data.ecritFichier('beats', 'beats', data)
                     console.log(this.beats);
-                });
+            });
         } else {
             let tmp:any = this.data.litFichier('beats', 'beats');
             // console.log(JSON.parse(tmp));
