@@ -1,6 +1,7 @@
 // Place any CSS rules you want to apply on both iOS and Android here.
 // This is where the vast majority of your CSS code goes.
-@import '~nativescript-theme-core/css/core.dark.css';
+@import '~nativescript-theme-core/css/core.light.css';
+@import './app/_app-custom.css';
 // Font icon class
 .fa {
    font-family: "FontAwesome";
@@ -51,3 +52,20 @@
 ActionBar .action-bar-title {
     horizontal-align: center;
 }
+// TabView .items{
+//     width:150;
+//     height:150;
+//     margin:0 10;
+// }
+// TabView.items .slide{
+//     width:150;
+//     height:150;
+//     margin:0 10;
+// }
+// TabView, .tab {
+//     tab-background-color:$pink-dark;
+//     tab-text-color:$page-icon-color;
+//     selected-tab-text-color:$white;
+//     margin:0 10;
+//     highlighted-color: $warning-light;
+// }

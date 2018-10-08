@@ -46,9 +46,9 @@ export class AppComponent implements OnInit {
     demandePermissions() {
         Permissions.requestPermission(android.Manifest.permission.ACCESS_NETWORK_STATE, "Needed for connectivity status").then(() => {
             this.connectivite.autorisation = true;
-            console.log("Permission granted!");
+            console.log("Permission donnée !");
         }).catch(() => {
-            console.log("Permission is not granted (sadface)");
+            console.log("Permission non donnée (sadface)");
         });
     }
 }
